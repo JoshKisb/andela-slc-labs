@@ -1,8 +1,8 @@
-from unittest import TestCase
+import unittest
 
 from car import *
 
-class CarClassTest(TestCase):
+class CarClassTest(unittest.TestCase):
     """docstring for CarClassTest"""
 
     def test_car_instance(self):
@@ -74,3 +74,7 @@ class CarClassTest(TestCase):
         self.assertListEqual([True, True, man.speed],
                              [moving_man_instance, moving_man_type, moving_man.speed],
                              msg='The car drive function should return the instance of the Car class')
+        
+        
+if __name__ == '__main__':
+	unittest.main()

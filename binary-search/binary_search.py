@@ -3,7 +3,7 @@ class BinarySearch(list):
 		list.__init__(self, [i for i in range(step, (length*step) + 1, step)])
 		self.length = len(self)
 
-	def search(self, value, midpo=0):
+	def search(self, value):
 		first = 0
 		last = self.length - 1
 		count = 0

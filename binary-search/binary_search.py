@@ -2,13 +2,19 @@ class BinarySearch(list):
 	def __init__(self, length, step):
 		list.__init__(self, [i for i in range(step, (length*step) + 1, step)])
 		self.length = len(self)
+		self.step = step
 
 	def search(self, value):
 		first = 0
 		last = self.length - 1
 		count = 0
 
-		# midpoint = (value // 2) - 1
+		if value == self[first]:
+			return {'count': count, 'index': first}
+		elif value == self[last]:
+			return {'count': count, 'index': last}
+		elif value > self[last] or value < self[first] or value % self.step != 0:
+			return {'count': count, 'index': -1}
 
 		while first <= last:
 			midpoint = (first + last)//2
